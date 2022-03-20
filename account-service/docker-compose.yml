@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  account-service:
+    image: demoxie/account-service:latest
+    ports:
+      - "8081:8080"
+    networks:
+      - fintech-network
+
+  loan-service:
+    image: demoxie/loan-service:latest
+    ports:
+      - "8082:8080"
+    networks:
+      - fintech-network
+
+  card-service:
+    image: demoxie/card-service:latest
+    ports:
+      - "8003:8080"
+    networks:
+      - fintech-network
+networks:
+  fintech-network:
